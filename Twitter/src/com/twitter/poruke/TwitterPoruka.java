@@ -32,6 +32,11 @@ public class TwitterPoruka {
 	/**
 	 * Ova metoda postavlja korisnika twitter naloga.
 	 * @param korisnik Korisnik
+	 * @throws java.lang.RuntimeException Ako je uneto ime:
+	 * <ul>
+	 * <li>null</li>
+	 * <li>prazan String</li>
+	 * </ul>
 	 */
 	public void setKorisnik(String korisnik) {
 		if (korisnik == null || korisnik.isEmpty())
@@ -51,6 +56,12 @@ public class TwitterPoruka {
 	/**
 	 * Ova metoda postavlja sadrzaj twitter poruke.
 	 * @param poruka Sadrzaj poruke.
+	 * @throws java.lang.RuntimeException Ako je uneta poruka : 
+	 * <ul>
+	 * <li>null</li>
+	 * <li>prazan String</li>
+	 * <li>duza od 140 karaktera</li>
+	 * </ul>
 	 */
 	public void setPoruka(String poruka) {
 		if (poruka == null || poruka.isEmpty() || poruka.length() > 140)

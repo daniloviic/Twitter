@@ -47,6 +47,11 @@ public class Twitter {
 	 * @param maxBroj Maksimalni broj poruka.
 	 * @param tag Tag na osnovu koga se vrsti pretraga.
 	 * @return rezultat[]
+	 * @throws java.lang.RuntimeException Ako je uneti tag :
+	 * <ul>
+	 * <li>null</li>
+	 * <li>prazan string</li>
+	 * </ul>
 	 */
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 		if (tag == null || tag.isEmpty())
