@@ -62,9 +62,27 @@ public class TwitterPorukaTest {
 	/**
 	 * Test method for {@link com.twitter.poruke.TwitterPoruka#setPoruka(java.lang.String)}.
 	 */
-	@Test
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetPorukaNull() {
+		poruka.setPoruka(null);
+	}
+	
+	/**
+	 * Test method for {@link com.twitter.poruke.TwitterPoruka#setPoruka(java.lang.String)}.
+	 */
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetPorukaEmptyString() {
+		poruka.setPoruka("");
+	}
+	
+	/**
+	 * Test method for {@link com.twitter.poruke.TwitterPoruka#setPoruka(java.lang.String)}.
+	 */
+	@Test 
 	public void testSetPoruka() {
-		fail("Not yet implemented");
+		poruka.setPoruka("Hello world !");
+		
+		assertEquals("Hello world !", poruka.getPoruka());
 	}
 
 	/**
