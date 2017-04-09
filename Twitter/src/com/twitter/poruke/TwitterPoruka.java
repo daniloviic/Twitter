@@ -23,7 +23,7 @@ public class TwitterPoruka {
 
 	/**
 	 * Ova metoda vraca korinika konkretnog twitter naloga.
-	 * @return korisnik
+	 * @return {@link String} korisnik
 	 */
 	public String getKorisnik() {
 		return korisnik;
@@ -31,7 +31,7 @@ public class TwitterPoruka {
 	
 	/**
 	 * Ova metoda postavlja korisnika twitter naloga.
-	 * @param korisnik
+	 * @param korisnik Korisnik
 	 */
 	public void setKorisnik(String korisnik) {
 		if (korisnik == null || korisnik.isEmpty())
@@ -42,7 +42,7 @@ public class TwitterPoruka {
 	
 	/**
 	 * Ova metoda vraca sadrzaj twitter poruke.
-	 * @return poruka
+	 * @return {@link String} poruka
 	 */
 	public String getPoruka() {
 		return this.poruka;
@@ -50,7 +50,7 @@ public class TwitterPoruka {
 	
 	/**
 	 * Ova metoda postavlja sadrzaj twitter poruke.
-	 * @param poruka
+	 * @param poruka Sadrzaj poruke.
 	 */
 	public void setPoruka(String poruka) {
 		if (poruka == null || poruka.isEmpty() || poruka.length() > 140)
@@ -60,6 +60,7 @@ public class TwitterPoruka {
 
 	/**
 	 * Ova metoda ispisuje korisnika twitter naloga kao i sadrzaj poruke.
+	 * @return {@link String} Podaci o korisniku.
 	 */
 	public String toString() {
 		return "KORISNIK:" + korisnik + " PORUKA:" + poruka;
