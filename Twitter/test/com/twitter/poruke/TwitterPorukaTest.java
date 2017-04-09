@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.omg.Messaging.SyncScopeHelper;
 
 /**
  * @author Milos
@@ -90,7 +91,7 @@ public class TwitterPorukaTest {
 	 */
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		assertEquals(poruka.toString(), "KORISNIK:" + poruka.getKorisnik() + " PORUKA:" + poruka.getPoruka());
 	}
 
 }
