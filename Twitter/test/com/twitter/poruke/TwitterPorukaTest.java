@@ -14,12 +14,15 @@ import org.junit.Test;
  *
  */
 public class TwitterPorukaTest {
+	
+	private TwitterPoruka poruka;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		poruka = new TwitterPoruka();
 	}
 
 	/**
@@ -27,14 +30,33 @@ public class TwitterPorukaTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		poruka = null;
 	}
 
 	/**
 	 * Test method for {@link com.twitter.poruke.TwitterPoruka#setKorisnik(java.lang.String)}.
 	 */
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetKorisnikNull() {
+		poruka.setKorisnik(null);
+	}
+	
+	/**
+	 * Test method for {@link com.twitter.poruke.TwitterPoruka#setKorisnik(java.lang.String)}.
+	 */
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetKorisnikEmptyString(){
+		poruka.setKorisnik("");
+	}
+	
+	/**
+	 * Test method for {@link com.twitter.poruke.TwitterPoruka#setKorisnik(java.lang.String)}.
+	 */
 	@Test
-	public void testSetKorisnik() {
-		fail("Not yet implemented");
+	public void testSetKorisnik(){
+		poruka.setKorisnik("Milos");
+		
+		assertEquals("Milos", poruka.getKorisnik());
 	}
 
 	/**
