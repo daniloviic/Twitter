@@ -27,11 +27,7 @@ public class Twitter {
 		return poruke;
 	}
 	
-	public String vratiPoslednji(){
-		return poruke.getLast().getKorisnik()+ "+" + poruke.getLast().getPoruka();
-	}
 
-	
 	/**
 	 * Metoda pravi novu poruku i puni je svim potrebnim podacima.
 	 * @param korisnik Korisnik

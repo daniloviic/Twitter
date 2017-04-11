@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.omg.Messaging.SyncScopeHelper;
+
 
 /**
  * @author Milos
@@ -74,6 +74,12 @@ public class TwitterPorukaTest {
 	@Test (expected = java.lang.RuntimeException.class)
 	public void testSetPorukaEmptyString() {
 		poruka.setPoruka("");
+	}
+	
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetPorukaDuzaOd140Char() {
+		poruka.setPoruka("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 	}
 	
 	/**
